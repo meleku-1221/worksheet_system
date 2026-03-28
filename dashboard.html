@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h2 id="welcome"></h2>
+      <img src="photo/abune.jpg" alt="" />
+      <button onclick="logout()">Logout</button>
+    </header>
+
+    <div class="container">
+      <!-- Upload -->
+      <div class="uploadBox">
+        <h3>Upload File</h3>
+
+        <input type="file" id="fileInput" />
+
+       <select id="subject">
+            <option value="">Select Subject</option>
+            <option>Amharic</option>
+            <option>English</option>
+            <option>Maths</option>
+            <option>Citizenship</option>
+            <option>Sport</option>
+            <option>PVA</option>
+            <option>Economics</option>
+            <output>History</option>
+            <option>Geography</option>
+            <option>Biology</option>
+            <option>Physics</option>
+            <option>Chemistry</option>
+            <option>ICT</option>   
+          </select>
+        <button onclick="uploadFile()">Upload</button>
+      </div>
+
+      <!-- Tables -->
+      <div class="files">
+        <h3>📘 Teacher Files</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>File</th>
+              <th>Grade</th>
+              <th>Section</th>
+              <th>Subject</th>
+              <th>Uploaded By</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="teacherTable"></tbody>
+        </table>
+
+        <h3>📗 Student Files</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>File</th>
+              <th>Grade</th>
+              <th>Section</th>
+              <th>Subject</th>
+              <th>Uploaded By</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="studentTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="card">
+      <img src="photo/abune.jpg" alt="" />
+      <h2>Login</h2>
+
+      <input id="loginId" placeholder="Enter ID Number" />
+
+      <button onclick="login()">Login</button>
+
+      <p>No account? <a href="register.html">Register</a></p>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+body{
+  font-family: Arial;
+  background: linear-gradient(135deg,#74ebd5,#acb6e5);
+  margin:0;
+}
+
+/* CARD */
+.card{
+  width:350px;
+  margin:100px auto;
+  background:white;
+  padding:25px;
+  border-radius:10px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* INPUT */
+input,select,button{
+  width:90%;
+  padding:10px;
+  margin:8px 0;
+  border-radius:5px;
+  border:1px solid #ccc;
+}
+
+/* BUTTON */
+button{
+  background:#3498db;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#2980b9;
+}
+
+.deleteBtn{
+  background:#e74c3c;
+}
+
+.deleteBtn:hover{
+  background:#c0392b;
+}
+
+/* HEADER */
+header{
+  background:#2c3e50;
+  color:white;
+  padding:15px;
+  display:flex;
+  justify-content:space-between;
+}
+
+/* LAYOUT */
+.container{
+  display:flex;
+  gap:20px;
+  padding:20px;
+}
+
+.uploadBox,.files{
+  background:white;
+  padding:20px;
+  border-radius:10px;
+}
+
+.uploadBox{width:35%;}
+.files{width:65%;}
+
+/* TABLE */
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th,td{
+  padding:10px;
+  border:1px solid #ddd;
+  text-align:center;
+}
+
+th{
+  background:#34495e;
+  color:white;
+}

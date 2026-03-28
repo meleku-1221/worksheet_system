@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="card">
+      <img src="photo/abune.jpg" alt="" />
+      <h2>Create Account</h2>
+
+      <input id="name" placeholder="Full Name" />
+      <input id="id" placeholder="ID Number" />
+
+      <select id="role">
+        <option value="">Role</option>
+        <option value="teacher">Teacher</option>
+        <option value="student">Student</option>
+        <option value="admin">Admin</option>
+      </select>
+
+      <select id="grade">
+        <option value="">Select Grade</option>
+        <option>Grade 1</option>
+        <option>Grade 2</option>
+        <option>Grade 3</option>
+        <option>Grade 4</option>
+        <option>Grade 5</option>
+        <option>Grade 6</option>
+        <option>Grade 7</option>
+        <option>Grade 8</option>
+        <option>Grade 9</option>
+        <option>Grade 10</option>
+        <option>Grade 11</option>
+        <option>Grade 12</option>
+        <option>College or university</option>
+      </select>
+
+      <select id="section">
+        <option value="">Section</option>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+        <option>D</option>
+      </select>
+
+      <button onclick="register()">Register</button>
+
+      <p>Already have account? <a href="login.html">Login</a></p>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
