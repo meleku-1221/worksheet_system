@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard — Worksheet System</title>
-    <meta name="description" content="View, upload, and manage worksheet files for your class." />
+    <meta
+      name="description"
+      content="View, upload, and manage worksheet files for your class."
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -64,11 +67,12 @@
 
       <!-- ── File Tables ── -->
       <section class="files">
-
         <!-- Teacher Files -->
         <div class="table-section">
           <div class="table-header">
-            <h3>📘 Teacher Files <span class="badge badge-teacher">Teacher</span></h3>
+            <h3>
+              📘 Teacher Files <span class="badge badge-teacher">Teacher</span>
+            </h3>
             <span class="row-count" id="teacherCount"></span>
           </div>
           <div class="table-wrap">
@@ -80,12 +84,13 @@
                   <th>Section</th>
                   <th>Subject</th>
                   <th>Uploaded By</th>
+                  <th>Teacher id</th>
                   <th>Actions</th>
                 </tr>
               </thead>
               <tbody id="teacherTable"></tbody>
             </table>
-            <div class="empty-state" id="teacherEmpty" style="display:none;">
+            <div class="empty-state" id="teacherEmpty" style="display: none">
               <div class="empty-icon">📭</div>
               No teacher files yet
             </div>
@@ -95,7 +100,9 @@
         <!-- Student Files -->
         <div class="table-section">
           <div class="table-header">
-            <h3>📗 Student Files <span class="badge badge-student">Student</span></h3>
+            <h3>
+              📗 Student Files <span class="badge badge-student">Student</span>
+            </h3>
             <span class="row-count" id="studentCount"></span>
           </div>
           <div class="table-wrap">
@@ -107,18 +114,18 @@
                   <th>Section</th>
                   <th>Subject</th>
                   <th>Uploaded By</th>
+                  <th>Student ID</th>
                   <th>Actions</th>
                 </tr>
               </thead>
               <tbody id="studentTable"></tbody>
             </table>
-            <div class="empty-state" id="studentEmpty" style="display:none;">
+            <div class="empty-state" id="studentEmpty" style="display: none">
               <div class="empty-icon">📭</div>
               No student files yet
             </div>
           </div>
         </div>
-
       </section>
     </div>
 

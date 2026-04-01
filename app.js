@@ -280,6 +280,7 @@ async function loadFiles(){
         <td>${f.section}</td>
         <td>${f.subject}</td>
         <td>${f.user}</td>
+        <td>${f.owner}</td>
         <td>
           <button class="btn-sm btn-download" onclick="downloadFile('${docSnapshot.id}')">⬇ Download</button>
           ${canDelete ? `<button class="btn-sm btn-delete" onclick="deleteFile('${docSnapshot.id}')">🗑 Delete</button>` : ''}

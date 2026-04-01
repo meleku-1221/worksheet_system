@@ -5,10 +5,10 @@
 
 /* ── CSS Variables ── */
 :root {
-  --bg:           #0d1117;
-  --bg-2:         #161b22;
+  --bg:           #2c3b52;
+  --bg-2:         #111318;
   --bg-3:         #1c2333;
-  --surface:      rgba(255,255,255,0.04);
+  --surface:      rgba(165, 126, 126, 0.04);
   --surface-hover:rgba(255,255,255,0.07);
   --border:       rgba(255,255,255,0.08);
   --border-focus: rgba(108,99,255,0.6);
@@ -198,12 +198,12 @@ button {
 }
 
 .btn-download:hover {
-  background: rgba(79,172,254,0.2);
-  box-shadow: 0 0 12px rgba(79,172,254,0.2);
+  background: rgba(102, 148, 189, 0.2);
+  box-shadow: 0 0 12px rgba(48, 135, 211, 0.2);
 }
 
 .btn-delete {
-  background: rgba(239,68,68,0.1);
+  background: rgba(150, 43, 43, 0.1);
   color: var(--danger);
   border: 1px solid rgba(239,68,68,0.2);
 }
