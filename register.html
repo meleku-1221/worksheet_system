@@ -1,59 +1,80 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register — Worksheet System</title>
+    <meta name="description" content="Create an account on the Worksheet System to start sharing and accessing class files." />
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body>
+  <body class="auth-page">
     <div class="card">
-      <img src="photo/abune.jpg" alt="" />
+      <img class="card-logo" src="photo/abune.jpg" alt="School Logo" />
       <h2>Create Account</h2>
+      <p class="subtitle">Fill in your details to get started</p>
 
-      <input id="name" placeholder="Full Name" />
-      <input id="id" placeholder="ID Number" />
+      <div class="field">
+        <label for="name">Full Name</label>
+        <input id="name" type="text" placeholder="e.g. Abebe Kebede" />
+      </div>
 
-      <select id="role">
-        <option value="">Role</option>
-        <option value="teacher">Teacher</option>
-        <option value="student">Student</option>
-        <option value="admin">Admin</option>
-      </select>
+      <div class="field">
+        <label for="id">ID Number</label>
+        <input id="id" type="text" placeholder="Your student or staff ID" />
+      </div>
 
-      <select id="grade">
-        <option value="">Select Grade</option>
-        <option>Grade 1</option>
-        <option>Grade 2</option>
-        <option>Grade 3</option>
-        <option>Grade 4</option>
-        <option>Grade 5</option>
-        <option>Grade 6</option>
-        <option>Grade 7</option>
-        <option>Grade 8</option>
-        <option>Grade 9</option>
-        <option>Grade 10</option>
-        <option>Grade 11</option>
-        <option>Grade 12</option>
-        <option>College or university</option>
-      </select>
+      <div class="field">
+        <label for="role">Role</label>
+        <select id="role">
+          <option value="">Select your role</option>
+          <option value="teacher">Teacher</option>
+          <option value="student">Student</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
 
-      <select id="section">
-        <option value="">Section</option>
-        <option>A</option>
-        <option>B</option>
-        <option>C</option>
-        <option>D</option>
-      </select>
+      <div class="field">
+        <label for="grade">Grade</label>
+        <select id="grade">
+          <option value="">Select grade</option>
+          <option value="Grade 1">Grade 1</option>
+          <option value="Grade 2">Grade 2</option>
+          <option value="Grade 3">Grade 3</option>
+          <option value="Grade 4">Grade 4</option>
+          <option value="Grade 5">Grade 5</option>
+          <option value="Grade 6">Grade 6</option>
+          <option value="Grade 7">Grade 7</option>
+          <option value="Grade 8">Grade 8</option>
+          <option value="Grade 9">Grade 9</option>
+          <option value="Grade 10">Grade 10</option>
+          <option value="Grade 11">Grade 11</option>
+          <option value="Grade 12">Grade 12</option>
+          <option value="College or university">College / University</option>
+        </select>
+      </div>
 
-      <button onclick="register()">Register</button>
+      <div class="field">
+        <label for="section">Section</label>
+        <select id="section">
+          <option value="">Select section</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+        </select>
+      </div>
 
-      <p>Already have account? <a href="login.html">Login</a></p>
+      <button id="registerBtn" class="btn-primary" onclick="register()">
+        Create Account
+      </button>
+
+      <p class="auth-link">Already have an account? <a href="login.html">Sign in</a></p>
     </div>
 
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.0/firebase-storage-compat.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

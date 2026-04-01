@@ -1,26 +1,39 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login — Worksheet System</title>
+    <meta name="description" content="Login to the Worksheet System to access and manage your class files." />
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body>
+  <body class="auth-page">
     <div class="card">
-      <img src="photo/abune.jpg" alt="" />
-      <h2>Login</h2>
+      <img class="card-logo" src="photo/abune.jpg" alt="School Logo" />
+      <h2>Welcome Back</h2>
+      <p class="subtitle">Sign in to access your worksheet portal</p>
 
-      <input id="loginId" placeholder="Enter ID Number" />
+      <div class="field">
+        <label for="loginId">ID Number</label>
+        <input
+          id="loginId"
+          type="text"
+          placeholder="Enter your ID number"
+          autocomplete="off"
+        />
+      </div>
 
-      <button onclick="login()">Login</button>
+      <button id="loginBtn" class="btn-primary" onclick="login()">
+        Sign In
+      </button>
 
-      <p>No account? <a href="register.html">Register</a></p>
+      <p class="auth-link">Don't have an account? <a href="register.html">Create one</a></p>
     </div>
 
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.0/firebase-storage-compat.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

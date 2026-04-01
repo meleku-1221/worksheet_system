@@ -1,27 +1,46 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard — Worksheet System</title>
+    <meta name="description" content="View, upload, and manage worksheet files for your class." />
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
+    <!-- ── Header ── -->
     <header>
+      <div class="header-left">
+        <img class="header-logo" src="photo/abune.jpg" alt="Logo" />
+        <span class="header-title">Worksheet System</span>
+      </div>
       <h2 id="welcome"></h2>
-      <img src="photo/abune.jpg" alt="" />
-      <button onclick="logout()">Logout</button>
+      <div class="header-right">
+        <button class="btn-logout" onclick="logout()">Sign Out</button>
+      </div>
     </header>
 
     <div class="container">
-      <!-- Upload -->
-      <div class="uploadBox">
+      <!-- ── Upload Panel ── -->
+      <aside class="uploadBox">
         <h3>Upload File</h3>
 
-        <input type="file" id="fileInput" />
+        <!-- Drag &amp; Drop Zone -->
+        <div class="drop-zone" id="dropZone">
+          <input type="file" id="fileInput" />
+          <div class="drop-icon">📂</div>
+          <p class="drop-text">
+            <strong>Click to browse</strong> or drag &amp; drop<br />
+            PDF, DOCX, images and more
+          </p>
+          <p id="fileName"></p>
+        </div>
 
-       <select id="subject">
-            <option value="">Select Subject</option>
+        <div class="upload-field">
+          <label for="subject">Subject</label>
+          <select id="subject">
+            <option value="">Select subject</option>
             <option>Amharic</option>
             <option>English</option>
             <option>Maths</option>
@@ -29,53 +48,89 @@
             <option>Sport</option>
             <option>PVA</option>
             <option>Economics</option>
-            <output>History</option>
+            <option>History</option>
             <option>Geography</option>
             <option>Biology</option>
             <option>Physics</option>
             <option>Chemistry</option>
-            <option>ICT</option>   
+            <option>ICT</option>
           </select>
-        <button onclick="uploadFile()">Upload</button>
-      </div>
+        </div>
 
-      <!-- Tables -->
-      <div class="files">
-        <h3>📘 Teacher Files</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>File</th>
-              <th>Grade</th>
-              <th>Section</th>
-              <th>Subject</th>
-              <th>Uploaded By</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody id="teacherTable"></tbody>
-        </table>
+        <button class="btn-primary" id="uploadBtn" onclick="uploadFile()">
+          ⬆ Upload File
+        </button>
+      </aside>
 
-        <h3>📗 Student Files</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>File</th>
-              <th>Grade</th>
-              <th>Section</th>
-              <th>Subject</th>
-              <th>Uploaded By</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody id="studentTable"></tbody>
-        </table>
-      </div>
+      <!-- ── File Tables ── -->
+      <section class="files">
+
+        <!-- Teacher Files -->
+        <div class="table-section">
+          <div class="table-header">
+            <h3>📘 Teacher Files <span class="badge badge-teacher">Teacher</span></h3>
+            <span class="row-count" id="teacherCount"></span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>File Name</th>
+                  <th>Grade</th>
+                  <th>Section</th>
+                  <th>Subject</th>
+                  <th>Uploaded By</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="teacherTable"></tbody>
+            </table>
+            <div class="empty-state" id="teacherEmpty" style="display:none;">
+              <div class="empty-icon">📭</div>
+              No teacher files yet
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Files -->
+        <div class="table-section">
+          <div class="table-header">
+            <h3>📗 Student Files <span class="badge badge-student">Student</span></h3>
+            <span class="row-count" id="studentCount"></span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>File Name</th>
+                  <th>Grade</th>
+                  <th>Section</th>
+                  <th>Subject</th>
+                  <th>Uploaded By</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="studentTable"></tbody>
+            </table>
+            <div class="empty-state" id="studentEmpty" style="display:none;">
+              <div class="empty-icon">📭</div>
+              No student files yet
+            </div>
+          </div>
+        </div>
+
+      </section>
     </div>
 
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage.js"></script>
+    <!-- Toast Notification -->
+    <div id="uploadStatus">
+      <div class="spinner" id="statusSpinner"></div>
+      <span id="statusText">Uploading...</span>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/11.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.0/firebase-storage-compat.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
