@@ -286,12 +286,17 @@ async function loadFiles(){
         </td>
       `;
 
-      if(f.role === 'teacher'){
+      if (f.role === 'teacher') {
+        // Teacher files are visible to everyone in the class
         teacherTable.appendChild(tr);
         teacherCount++;
       } else {
-        studentTable.appendChild(tr);
-        studentCount++;
+        // Student files: students only see their own; teachers & admins see all
+        const canSeeStudentFile = user.role !== 'student' || f.owner === user.id;
+        if (canSeeStudentFile) {
+          studentTable.appendChild(tr);
+          studentCount++;
+        }
       }
     });
 
